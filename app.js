@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const express = require("express");
 const app = express();
 app.use(express.json());
@@ -6,6 +8,13 @@ let expenses = [
   { id: 1, amount: 200, category: "Education", date: "17-03-2025" },
   { id: 2, amount: 234, category: "House", date: "12-11-2025" },
 ];
+
+// Home route
+app.get("/", (req,res)=>{
+  res.status(200).send(
+    "<h1>GROUP 3 PROJECT WORK</h1>"
+  )
+})
 
 app.get("/api/", (req, res) => {
   res.status(200).json({
