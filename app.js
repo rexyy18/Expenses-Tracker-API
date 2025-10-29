@@ -29,7 +29,7 @@ app.get("/api/expenses", (req, res) => {
 });
 
 // Get a single Expenses
-app.get("/api/expense/:id", (req, res) => {
+app.get("/api/expenses/:id", (req, res) => {
   const Id = parseInt(req.params.id);
   const expense = expenses.find((t) => t.id === Id);
   if (!expense) return res.status(200).json({ message: "Not found" });
